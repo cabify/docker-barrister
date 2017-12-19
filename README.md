@@ -26,3 +26,5 @@ reads the IDL from STDIN and writes the Go code into STDOUT, use it like this:
 ```bash
 cat definition.idl | docker run -i cabify/barrister barrister2go pkg > my/pkg.go
 ```
+
+You'll probably want to pipe the output through your local go formatting tool, like `goimports`.
