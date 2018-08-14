@@ -1,11 +1,11 @@
 #!/bin/sh
 set -euo pipefail
 
-if [[ $# -ne 1 ]]; then
-    echo "Usage: barrister2go <package-name>"
+if [[ $# -lt 1 ]]; then
+    echo "Usage: barrister2go <package-name> [<options>]"
     echo "Reads the IDL from stdin and outputs the .go file contents to the STDOUT"
     exit 1
 fi
 
 
-barrister -i | idl2go -i -s -p $1
+barrister -i | idl2go -i -s -p $@
